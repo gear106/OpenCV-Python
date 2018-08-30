@@ -25,12 +25,14 @@ print(x+y)            # 250 + 10 = 260 % 256 = 4
 图像混合： g(x) = (1+a)*f(x) + a*h(x), 其中a(0~1),把两幅图像混合到一起，第一幅权重为
 1+a, 第二幅为a
 '''
-root = 'D:/python/OpenCV-Python/ImageData/'
-img1 = cv2.imread(root+'IMG_1.jpg')
-img2 = cv2.imread(root+'IMG_2.jpg')
-
-dst  = cv2.addWeighted(img1, 0.3, img1, 0.7, 0)  # 这里需要两幅图像大小相同
-
-cv2.imshow('dst', dst)
+root = 'D:/python/OpenCV-Python/data/'
+img1 = cv2.imread(root+'ml.png')
+img2 = cv2.imread(root+'ml.png')
+dst  = cv2.addWeighted(img1, 0.7, img2, 0.3, 0)  # 这里需要两幅图像大小相同
+cv2.imshow('img2', img2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+
+
+
