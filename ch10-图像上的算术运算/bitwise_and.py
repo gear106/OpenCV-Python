@@ -22,7 +22,11 @@ img2 = cv2.imread(root + 'opencv-logo-white.png')
 rows, cols, channels = img2.shape
 roi = img1[0:rows, 0:cols]
 
-# 现在创建一个logo的mask,并且创建其的reverse mask
+'''
+现在创建一个logo的mask,并且创建其的reverse mask
+cv2.THRESH_BINARY（黑白二值）,像素高于阈值时，给像素赋予新值，
+否则，赋予另外一种颜色。函数是cv2.threshold() 
+'''
 img2gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 ret, mask = cv2.threshold(img2gray, 10, 255, cv2.THRESH_BINARY) # mask
 mask_inv = cv2.bitwise_not(mask)  # 值全位0
