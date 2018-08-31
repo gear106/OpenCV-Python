@@ -21,8 +21,8 @@ ret = cap.set(3, 240)
 ret = cap.set(4, 240)
 
 #定蓝色的阈值 ,这里要计算将颜色从BGR转换到HSV时的阈值！！！！
-lower_blue = np.array([110, 50, 50])
-upper_blue = np.array([130, 255, 255])
+lower_blue = np.array([30, 100, 100])
+upper_blue = np.array([70, 255, 255])
 
 while True:
     # 获取每一帧图像
