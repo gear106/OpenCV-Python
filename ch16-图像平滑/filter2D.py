@@ -15,7 +15,7 @@ root = 'D:/python/OpenCV-Python/ImageData/'
 image = cv2.imread(root+'IMG_1.jpg',0)
 
 kernel = np.ones((5,5), np.float32) / 25
-
+# 这里-1表示输出图像的深度与输入图像相同
 dst = cv2.filter2D(image, -1, kernel)
 
 plt.subplot(121), plt.imshow(image), plt.title('Original')
