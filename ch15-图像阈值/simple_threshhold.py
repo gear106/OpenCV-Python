@@ -32,8 +32,3 @@ for i in range(6):
     plt.xticks([]), plt.yticks([])
 plt.show()
 
-
-cv2.imshow('thresh1', thresh1)
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()
