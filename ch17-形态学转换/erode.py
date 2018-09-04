@@ -24,8 +24,9 @@ print(image.shape)
 kernel = np.ones((5,5), np.uint8)
 erosion = cv2.erode(image, kernel, iterations=1)
 
-cv2.moveWindow('erpde', x=image.shape[0], y=0)
+cv2.namedWindow('erode',cv2.WINDOW_NORMAL)
 cv2.imshow('erode', erosion)
+cv2.moveWindow('erode', x=image.shape[1], y=0)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
