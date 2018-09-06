@@ -18,4 +18,19 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 root = 'D:/python/OpenCV-Python/data/'
-cv2.imread(root+'box.jpg',0)
+image = cv2.imread(root+'box.jpg',0)
+
+sobelx8u = cv2.Sobel(image, cv2.CV_8U, 1, 0, ksize=5)
+sobelx64f = cv2.Sobel(image, cv2.CV_64F, 1, 0, ksize=5)
+
+abs_sobel64f = np.absolute(sobelx64f)
+sobel_8u = np.uint8(abs_sobel64f)
+
+plt.subplot(1,3,1), plt.imshow(image, cmap='gray')
+plt.title('original'), plt.xticks([]), plt.yticks([])
+
+plt.subplot(1,3,2), plt.imshow(sobelx8u, cmap='gray')
+plt.title('sobelx8u'), plt.xticks([]), plt.yticks([])
+
+plt.subplot(1,3,3), plt.imshow(sobelx64f, cmap='gray')
+plt.title('sobelx64f'), plt.xticks([]), plt.yticks([])
